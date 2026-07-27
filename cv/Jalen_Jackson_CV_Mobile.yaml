@@ -1,0 +1,107 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+
+cv:
+  name: Jalen Jackson
+  headline: "Software Engineer: Mobile SDK & Authentication Systems"
+  email: jackson.jalen@proton.me
+  social_networks:
+    - network: LinkedIn
+      username: jalen-jackson
+    - network: GitHub
+      username: JayDawgThaGOAT
+
+  sections:
+    summary:
+      - "Software Engineer with 5+ years building cross-platform mobile SDKs, authentication systems, and identity infrastructure across iOS, Android, and game engine platforms."
+
+    experience:
+      - company: Zynga
+        position: "Software Engineer, Identities"
+        start_date: 2023-01
+        end_date: present
+        location: Remote
+        highlights:
+          - "Authored the cross-platform secure token storage tech spec, designing iOS Keychain persistence with lazy migration from legacy PlayerPrefs and a Unity Editor fallback"
+          - "Migrated the iOS Keychain package to Swift Package Manager and root-caused an access-group bug where iOS defaulted to the wrong entitlement, publishing a podspec fix"
+          - "Implemented Android token persistence in C++ via a JNI bridge to Kotlin, adding the missing platform branch that had blocked token storage from ever being written"
+          - "Shipped a Kotlin Auto Backup bridge library and authored the Block Store replacement tech spec to eliminate a cold-start restore race that left auth reading empty storage"
+          - "Guarded Attach and Login against concurrent duplicate calls in C#, eliminating double recovery pop-ups from rapid taps on Apple Game Center and Google Play Games"
+
+      - company: Playdots
+        position: "Software Engineer, Unity"
+        start_date: 2021-06
+        end_date: 2023-01
+        location: Remote
+        highlights:
+          - "Owned core gameplay systems in Unity C# for Two Dots, a top-100 mobile title, delivering the level editor pipeline and mechanics that powered ongoing releases"
+          - "Led Garden Tails from alpha to Apple Arcade global release, architecting the localization pipeline and ensuring App Store compliance for worldwide distribution"
+          - "Shipped Unity C# monetization systems for Garden Tails, including an MVC Credits scene and in-game economy features that drove player re-engagement"
+
+    education:
+      - institution: "California State University, Fullerton"
+        area: Computer Science
+        degree: B.S.
+        end_date: 2021-01
+        location: "Fullerton, CA"
+
+    skills:
+      - label: "Languages"
+        details: "C#, C++, Objective-C, Kotlin, Java"
+      - label: "Platforms & Tooling"
+        details: "iOS Keychain, Android Auto Backup / Block Store, JNI, Swift Package Manager, CocoaPods, Xcode, Gradle, Artifactory"
+
+design:
+  theme: engineeringclassic
+  page:
+    size: us-letter
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.5in
+    right_margin: 0.5in
+    show_footer: false
+    show_top_note: false
+  typography:
+    line_spacing: 0.85em
+    font_family:
+      body: Raleway
+      name: Raleway
+      headline: Raleway
+      connections: Raleway
+      section_titles: Raleway
+    font_size:
+      body: 10pt
+      name: 25pt
+      headline: 10pt
+      connections: 9pt
+      section_titles: 1.2em
+    bold:
+      name: false
+      headline: false
+      connections: false
+      section_titles: false
+  colors:
+    name: rgb(0,0,0)
+    connections: rgb(0,0,0)
+    section_titles: rgb(0,0,0)
+    links: rgb(0,0,0)
+  section_titles:
+    type: with_full_line
+    line_thickness: 0.5pt
+    space_above: 0.7cm
+    space_below: 0.45cm
+  sections:
+    space_between_regular_entries: 0.7cm
+    space_between_text_based_entries: 0.25cm
+    show_time_spans_in: []
+  entries:
+    date_and_location_width: 4.15cm
+    short_second_row: false
+    summary:
+      space_above: 0.25cm
+    highlights:
+      bullet: "●"
+      nested_bullet: "●"
+      space_left: 0cm
+      space_above: 0.25cm
+      space_between_items: 0.2cm
+      space_between_bullet_and_text: 0.3em

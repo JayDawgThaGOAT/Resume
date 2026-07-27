@@ -1,0 +1,13 @@
+# JobSpy scrape output — regenerated per search, not source of truth
+jobs/
+
+# Internal work reference docs (company-specific progress docs, tech specs, 1-pagers)
+references/
+
+# Local agent/OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor / tool caches
+.zed/state/
+*.log

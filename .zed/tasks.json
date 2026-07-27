@@ -1,0 +1,59 @@
+[
+  {
+    "label": "RenderCV: Render Game CV",
+    "command": "rendercv",
+    "args": ["render", "/mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_Game.yaml", "--output-folder", "/mnt/user/data/documents/Resume/build/Game"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "RenderCV: Render Mobile CV",
+    "command": "rendercv",
+    "args": ["render", "/mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_Mobile.yaml", "--output-folder", "/mnt/user/data/documents/Resume/build/Mobile"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "RenderCV: Render SWE CV",
+    "command": "rendercv",
+    "args": ["render", "/mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_SWE.yaml", "--output-folder", "/mnt/user/data/documents/Resume/build/SWE"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "RenderCV: Render All CVs",
+    "command": "bash",
+    "args": [
+      "-c",
+      "rendercv render /mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_Game.yaml --output-folder /mnt/user/data/documents/Resume/build/Game && rendercv render /mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_Mobile.yaml --output-folder /mnt/user/data/documents/Resume/build/Mobile && rendercv render /mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_SWE.yaml --output-folder /mnt/user/data/documents/Resume/build/SWE"
+    ],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "RenderCV: Watch Game CV",
+    "command": "rendercv",
+    "args": ["render", "/mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_Game.yaml", "--output-folder", "/mnt/user/data/documents/Resume/build/Game", "--watch"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "RenderCV: Watch Mobile CV",
+    "command": "rendercv",
+    "args": ["render", "/mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_Mobile.yaml", "--output-folder", "/mnt/user/data/documents/Resume/build/Mobile", "--watch"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "RenderCV: Watch SWE CV",
+    "command": "rendercv",
+    "args": ["render", "/mnt/user/data/documents/Resume/cv/Jalen_Jackson_CV_SWE.yaml", "--output-folder", "/mnt/user/data/documents/Resume/build/SWE", "--watch"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "JobSpy: Default search",
+    "command": "python3",
+    "args": ["/mnt/user/data/documents/Resume/scripts/search_jobs.py"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  },
+  {
+    "label": "JobSpy: Prompted search",
+    "command": "bash",
+    "args": ["/mnt/user/data/documents/Resume/scripts/prompted_search.sh"],
+    "cwd": "/mnt/user/data/documents/Resume"
+  }
+]

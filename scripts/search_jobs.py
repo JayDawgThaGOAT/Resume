@@ -2,8 +2,8 @@
 """Thin CLI wrapper around python-jobspy's scrape_jobs().
 
 Writes results to jobs/jobs_<YYYYMMDD_HHMMSS>.csv (gitignored) and prints a
-short summary table to stdout. Defaults match the user's CV variants: Unity/
-Unreal mobile engineer, remote, last 72h.
+short summary table to stdout. Defaults target Unity/Unreal engineering roles (boolean query with
+light noise exclusions), remote, Indeed+LinkedIn, last 7 days.
 
 See .agents/skills/jobspy/SKILL.md for the full scrape_jobs() reference.
 """
@@ -25,7 +25,10 @@ def parse_args() -> argparse.Namespace:
     )
     p.add_argument(
         "--search-term",
-        default="Unity OR Unreal mobile engineer",
+        default=(
+            '("Unity" OR Unreal) (engineer OR developer) '
+            "(mobile OR iOS OR Android OR gameplay OR C# OR C++) -QA -marketing"
+        ),
         help="Job search query (supports boolean: \"exact\" -exclude (a OR b))",
     )
     p.add_argument("--location", default="Remote", help="Job location")
@@ -34,10 +37,10 @@ def parse_args() -> argparse.Namespace:
         action="append",
         default=None,
         choices=["linkedin", "indeed", "glassdoor", "google", "zip_recruiter", "bayt", "naukri", "bdjobs"],
-        help="Job site(s) to search. Repeatable. Default: indeed",
+        help="Job site(s) to search. Repeatable. Default: indeed, linkedin",
     )
-    p.add_argument("--results", type=int, default=20, help="Results per site (default 20)")
-    p.add_argument("--hours-old", type=int, default=72, help="Hours since posted (default 72)")
+    p.add_argument("--results", type=int, default=25, help="Results per site (default 25)")
+    p.add_argument("--hours-old", type=int, default=168, help="Hours since posted (default 168 = 7 days)")
     p.add_argument("--remote", action="store_true", default=True, help="Remote-only (default True)")
     p.add_argument("--no-remote", dest="remote", action="store_false", help="Include non-remote roles")
     p.add_argument("--country-indeed", default="USA", help="Indeed/Glassdoor country (default USA)")
@@ -63,10 +66,15 @@ def main() -> int:
     try:
         from jobspy import scrape_jobs
     except ImportError:
-        print("python-jobspy not installed. Run: pip install -U python-jobspy", file=sys.stderr)
+        print(
+            "python-jobspy not installed. From the repo root, run:\n"
+            "  python3 -m venv .venv && .venv/bin/pip install -r requirements.txt\n"
+            "Then use .venv/bin/python (Cursor tasks already do).",
+            file=sys.stderr,
+        )
         return 1
 
-    sites = args.site or ["indeed"]
+    sites = args.site or ["indeed", "linkedin"]
     if isinstance(sites, str):
         sites = [sites]
 

@@ -1,3 +1,6 @@
+# Local Python virtualenv (recreate from requirements.txt)
+.venv/
+
 # JobSpy scrape output — regenerated per search, not source of truth
 jobs/
 

@@ -12,15 +12,21 @@ disable-model-invocation: false
 `python-jobspy` (PyPI: `python-jobspy`, import `jobspy`) is a job-board scraper
 that aggregates postings from LinkedIn, Indeed, Glassdoor, Google,
 ZipRecruiter, Bayt, Naukri, and Bdjobs into a single pandas DataFrame. This
-repo uses it via `scripts/search_jobs.py` (a thin CLI wrapper) plus a Zed task
-with the user's default search.
+repo uses it via `scripts/search_jobs.py` (a thin CLI wrapper) plus Cursor/VS Code
+tasks for the default and prompted searches.
 
 ## Installation (this environment)
 
-JobSpy is already installed system-wide: `python3 -c "import jobspy"` works on
-Python 3.12. Do not reinstall unless `pip install -U python-jobspy` is
-explicitly requested. Outside this environment: `pip install -U python-jobspy`
-(requires Python >= 3.10).
+JobSpy lives in the repo virtualenv (`.venv/`), pinned via `requirements.txt`.
+Create/refresh with:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
+
+Use `.venv/bin/python` (or activate the venv) — system `python3` will not see
+`jobspy`. Requires Python >= 3.10.
 
 ## Running a search
 
@@ -28,18 +34,18 @@ Prefer the wrapper script over calling `scrape_jobs()` directly — it handles
 output paths, timestamps, and the gitignored `jobs/` folder.
 
 ```bash
-# Default search (the Zed task "JobSpy: Default search" runs this)
-python3 scripts/search_jobs.py
+# Default search (Cursor task "JobSpy: Default search" runs this)
+.venv/bin/python scripts/search_jobs.py
 
 # Custom search — see --help for all flags
-python3 scripts/search_jobs.py --search-term "Unity C# mobile engineer" \
+.venv/bin/python scripts/search_jobs.py --search-term "Unity C# mobile engineer" \
   --location "Remote" --site indeed --results 20 --hours-old 72 --remote
 
 # Multiple sites
-python3 scripts/search_jobs.py --site indeed --site linkedin --site google
+.venv/bin/python scripts/search_jobs.py --site indeed --site linkedin --site google
 
 # Save full job descriptions (slower, more requests)
-python3 scripts/search_jobs.py --fetch-description
+.venv/bin/python scripts/search_jobs.py --fetch-description
 ```
 
 Output lands at `jobs/jobs_<YYYYMMDD_HHMMSS>.csv` (gitignored). The script also
@@ -115,8 +121,9 @@ You've been blocked for too many requests. Recovery:
 2. Pick a posting.
 3. Copy the closest CV variant: `cp cv/Jalen_Jackson_CV_SWE.yaml cv/Jalen_Jackson_CV_<Company>.yaml`.
 4. Edit `headline`, `summary`, and relevant bullets to match the JD.
-5. Render: `rendercv render cv/Jalen_Jackson_CV_<Company>.yaml --output-folder "$PWD/build/<Company>"` (or use a per-variant Zed task).
-6. Apply.
+5. Render: `.venv/bin/rendercv render cv/Jalen_Jackson_CV_<Company>.yaml --output-folder "$PWD/build/<Company>"`.
+6. Apply. Do **not** commit or push company-tailored YAML/renders — they are
+   gitignored (only Game/Mobile/SWE stay tracked).
 
 JobSpy finds roles; it does **not** tailor the CV or fetch a single URL — for
 a specific posting you already have, copy the JD text into `jobs/<company>.md`

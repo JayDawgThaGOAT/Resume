@@ -6,7 +6,7 @@
   name: "Jalen Jackson",
   title: "Jalen Jackson - CV",
   footer: context { [#emph[Jalen Jackson -- #str(here().page())\/#str(counter(page).final().first())]] },
-  top-note: [ #emph[Last updated in July 2026] ],
+  top-note: [ #emph[Last updated in Aug 2026] ],
   locale-catalog-language: "en",
   text-direction: ltr,
   page-size: "us-letter",
@@ -80,8 +80,8 @@
   entries-highlights-space-between-bullet-and-text: 0.3em,
   date: datetime(
     year: 2026,
-    month: 7,
-    day: 26,
+    month: 8,
+    day: 11,
   ),
 )
 

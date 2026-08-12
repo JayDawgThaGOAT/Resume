@@ -9,5 +9,4 @@ references/
 Thumbs.db
 
 # Editor / tool caches
-.zed/state/
 *.log

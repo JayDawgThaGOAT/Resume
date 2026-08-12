@@ -7,6 +7,22 @@ jobs/
 # Internal work reference docs (company-specific progress docs, tech specs, 1-pagers)
 references/
 
+# Company-tailored CVs (local apply artifacts — do not push). Keep only the three
+# role variants tracked: Game, Mobile, SWE.
+cv/Jalen_Jackson_CV_*.yaml
+!cv/Jalen_Jackson_CV_Game.yaml
+!cv/Jalen_Jackson_CV_Mobile.yaml
+!cv/Jalen_Jackson_CV_SWE.yaml
+
+# Company-tailored renders under build/<Company>/ — keep only Game/Mobile/SWE.
+build/*
+!build/Game/
+!build/Game/**
+!build/Mobile/
+!build/Mobile/**
+!build/SWE/
+!build/SWE/**
+
 # Local agent/OS cruft
 .DS_Store
 Thumbs.db

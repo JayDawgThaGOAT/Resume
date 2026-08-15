@@ -99,7 +99,7 @@
 
 == Summary
 
-Software Engineer with 5+ years building production software across mobile, SDKs, and cross-platform systems in C\#, C++, Java, and GDScript.
+Software engineer with 5+ years building mobile SDKs and production game systems across iOS and Android.
 
 == Experience
 
@@ -113,15 +113,15 @@ Software Engineer with 5+ years building production software across mobile, SDKs
 
   ],
   main-column-second-row: [
-    - Authored the AuthenticationFlow API guard recommendations, scoping a single concurrency flag to replace granular per-method flags and categorizing which public auth entry points need guards
+    - Lead system design and C\#\/C++ development for Account Recovery after Reinstall across iOS Keychain and Android Block Store, coordinating cross-platform test plans with QA after six-stakeholder approval
 
-    - Drove V2 API naming consistency across the C\# and C++ SDKs, aligning public callbacks and methods to remove cross-platform drift
+    - Delivered Google reCAPTCHA v3 for C++ auth SDKs on iOS and Android, including Unreal, adding bot protection and unblocking release validation
 
-    - Migrated reCAPTCHA from Classic to Enterprise in C++ for Unreal Engine 5 iOS, writing a reusable CMake helper to embed Swift frameworks into the static auth library
+    - Redesigned Android 11+ SSO so titles could restore native sign-in; production logs shifted from failures-only to successful token operations
 
-    - Fixed WebGL incompatibility in the C\# SDK by replacing blocking delays with a task utility, preserving the base-class contract for WebGL builds
+    - Shipped same-session email-link verification in the Unity auth SDK so the game updates verified-email state without a relaunch or polling
 
-    - Refactored the ImpersonateAccount API to Impersonate across the C++ SDK, unit tests, and integration tests, replacing the legacy command in the launcher
+    - Refactored Android AAR publishing to JFrog Artifactory across four auth SDK libraries, splitting snapshot and release repos so games can consume in-dev builds without mixing them into release
 
   ],
 )
@@ -162,6 +162,8 @@ Software Engineer with 5+ years building production software across mobile, SDKs
 
 == Skills
 
-#strong[Languages:] C\#, C++, Java, GDScript, Objective-C, Kotlin
+#strong[Languages:] C\#, C++, Kotlin, Objective-C, Swift
 
-#strong[Platforms & Practices:] iOS, Android, Unity, Unreal Engine 5, WebGL, JNI, CMake, SPM, Gradle
+#strong[Platforms:] iOS, Android, Unity, Unreal Engine 5
+
+#strong[Tooling:] Gradle, CMake, JNI, SPM, JFrog Artifactory

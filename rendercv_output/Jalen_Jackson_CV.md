@@ -6,10 +6,10 @@
 
 
 # Summary
-Software Engineer with 5+ years building production software across mobile, game engine, and SDK platforms in C#, C++, Java, and GDScript.
+Software Engineer with 5+ years building production software across mobile, SDKs, and cross-platform systems in C#, C++, Java, and GDScript.
 
 # Experience
-## **Software Engineer, Identities**, Zynga -- Remote
+## **Software Engineer 2, Identities**, Zynga -- Remote
 
 Jan 2023 – present
 

@@ -2,7 +2,7 @@
 
 cv:
   name: Jalen Jackson
-  headline: "Software Engineer: Mobile SDK & Authentication Systems"
+  headline: "Software Engineer"
   email: jackson.jalen@proton.me
   social_networks:
     - network: LinkedIn
@@ -12,20 +12,20 @@ cv:
 
   sections:
     summary:
-      - "Software Engineer with 5+ years building cross-platform mobile SDKs, authentication systems, and identity infrastructure across iOS, Android, and game engine platforms."
+      - "Software Engineer with 5+ years building production software across mobile, SDKs, and cross-platform systems in C#, C++, Java, and GDScript."
 
     experience:
       - company: Zynga
-        position: "Software Engineer, Identities"
+        position: "Software Engineer 2, Identities"
         start_date: 2023-01
         end_date: present
         location: Remote
         highlights:
-          - "Authored the cross-platform secure token storage tech spec, designing iOS Keychain persistence with lazy migration from legacy PlayerPrefs and a Unity Editor fallback"
-          - "Migrated the iOS Keychain package to Swift Package Manager and root-caused an access-group bug where iOS defaulted to the wrong entitlement, publishing a podspec fix"
-          - "Implemented Android token persistence in C++ via a JNI bridge to Kotlin, adding the missing platform branch that had blocked token storage from ever being written"
-          - "Shipped a Kotlin Auto Backup bridge library and authored the Block Store replacement tech spec to eliminate a cold-start restore race that left auth reading empty storage"
-          - "Guarded Attach and Login against concurrent duplicate calls in C#, eliminating double recovery pop-ups from rapid taps on Apple Game Center and Google Play Games"
+          - "Authored the AuthenticationFlow API guard recommendations, scoping a single concurrency flag to replace granular per-method flags and categorizing which public auth entry points need guards"
+          - "Drove V2 API naming consistency across the C# and C++ SDKs, aligning public callbacks and methods to remove cross-platform drift"
+          - "Migrated reCAPTCHA from Classic to Enterprise in C++ for Unreal Engine 5 iOS, writing a reusable CMake helper to embed Swift frameworks into the static auth library"
+          - "Fixed WebGL incompatibility in the C# SDK by replacing blocking delays with a task utility, preserving the base-class contract for WebGL builds"
+          - "Refactored the ImpersonateAccount API to Impersonate across the C++ SDK, unit tests, and integration tests, replacing the legacy command in the launcher"
 
       - company: Playdots
         position: "Software Engineer, Unity"
@@ -46,9 +46,9 @@ cv:
 
     skills:
       - label: "Languages"
-        details: "C#, C++, Objective-C, Kotlin, Java"
-      - label: "Platforms & Tooling"
-        details: "iOS Keychain, Android Auto Backup / Block Store, JNI, Swift Package Manager, CocoaPods, Xcode, Gradle, Artifactory"
+        details: "C#, C++, Java, GDScript, Objective-C, Kotlin"
+      - label: "Platforms & Practices"
+        details: "iOS, Android, Unity, Unreal Engine 5, WebGL, JNI, CMake, SPM, Gradle"
 
 design:
   theme: engineeringclassic

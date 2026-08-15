@@ -7,9 +7,9 @@
       "command": "${workspaceFolder}/.venv/bin/rendercv",
       "args": [
         "render",
-        "${workspaceFolder}/cv/Jalen_Jackson_CV_${input:cvVariant}.yaml",
+        "${workspaceFolder}/Jalen_Jackson_CV.yaml",
         "--output-folder",
-        "${workspaceFolder}/build/${input:cvVariant}"
+        "${workspaceFolder}/rendercv_output"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
@@ -25,28 +25,14 @@
       "problemMatcher": []
     },
     {
-      "label": "RenderCV: Render All CVs",
-      "type": "shell",
-      "command": "\"${workspaceFolder}/.venv/bin/rendercv\" render \"${workspaceFolder}/cv/Jalen_Jackson_CV_Game.yaml\" --output-folder \"${workspaceFolder}/build/Game\" && \"${workspaceFolder}/.venv/bin/rendercv\" render \"${workspaceFolder}/cv/Jalen_Jackson_CV_Mobile.yaml\" --output-folder \"${workspaceFolder}/build/Mobile\" && \"${workspaceFolder}/.venv/bin/rendercv\" render \"${workspaceFolder}/cv/Jalen_Jackson_CV_SWE.yaml\" --output-folder \"${workspaceFolder}/build/SWE\"",
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "group": "build",
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
-    {
       "label": "RenderCV: Watch CV",
       "type": "shell",
       "command": "${workspaceFolder}/.venv/bin/rendercv",
       "args": [
         "render",
-        "${workspaceFolder}/cv/Jalen_Jackson_CV_${input:cvVariant}.yaml",
+        "${workspaceFolder}/Jalen_Jackson_CV.yaml",
         "--output-folder",
-        "${workspaceFolder}/build/${input:cvVariant}",
+        "${workspaceFolder}/rendercv_output",
         "--watch"
       ],
       "options": {
@@ -68,61 +54,6 @@
           "endsPattern": "."
         }
       }
-    },
-    {
-      "label": "JobSpy: Default search",
-      "type": "shell",
-      "command": "${workspaceFolder}/.venv/bin/python",
-      "args": ["${workspaceFolder}/scripts/search_jobs.py"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "JobSpy: Custom search",
-      "type": "shell",
-      "command": "${workspaceFolder}/.venv/bin/python",
-      "args": [
-        "${workspaceFolder}/scripts/search_jobs.py",
-        "--search-term",
-        "${input:searchTerm}",
-        "--location",
-        "${input:searchLocation}"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    }
-  ],
-  "inputs": [
-    {
-      "id": "cvVariant",
-      "type": "pickString",
-      "description": "CV variant to render",
-      "options": ["Game", "Mobile", "SWE"],
-      "default": "SWE"
-    },
-    {
-      "id": "searchTerm",
-      "type": "promptString",
-      "description": "Job search term (boolean OK: \"exact\" -exclude (a OR b))",
-      "default": "(\"Unity\" OR Unreal) (engineer OR developer) (mobile OR iOS OR Android OR gameplay OR C# OR C++) -QA -marketing"
-    },
-    {
-      "id": "searchLocation",
-      "type": "promptString",
-      "description": "Job location",
-      "default": "Remote"
     }
   ]
 }

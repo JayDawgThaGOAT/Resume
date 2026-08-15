@@ -1,2 +1,1 @@
 rendercv[full]==2.8
-python-jobspy==1.1.82

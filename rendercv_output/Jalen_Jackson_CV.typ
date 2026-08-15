@@ -6,7 +6,7 @@
   name: "Jalen Jackson",
   title: "Jalen Jackson - CV",
   footer: context { [#emph[Jalen Jackson -- #str(here().page())\/#str(counter(page).final().first())]] },
-  top-note: [ #emph[Last updated in July 2026] ],
+  top-note: [ #emph[Last updated in Aug 2026] ],
   locale-catalog-language: "en",
   text-direction: ltr,
   page-size: "us-letter",
@@ -80,15 +80,15 @@
   entries-highlights-space-between-bullet-and-text: 0.3em,
   date: datetime(
     year: 2026,
-    month: 7,
-    day: 26,
+    month: 8,
+    day: 15,
   ),
 )
 
 
 = Jalen Jackson
 
-  #headline([Unity & Unreal Engineer: Gameplay Systems & Mobile])
+  #headline([Software Engineer])
 
 #connections(
   [#link("mailto:jackson.jalen@proton.me", icon: false, if-underline: false, if-color: false)[#connection-with-icon("envelope")[jackson.jalen\@proton.me]]],
@@ -99,13 +99,13 @@
 
 == Summary
 
-Software Engineer with 5+ years of Unity C\# and Unreal C++ experience, shipping gameplay systems and production mobile titles across iOS, Android, and Apple Arcade.
+Software Engineer with 5+ years building production software across mobile, SDKs, and cross-platform systems in C\#, C++, Java, and GDScript.
 
 == Experience
 
 #regular-entry(
   [
-    #strong[Software Engineer, Identities], Zynga -- Remote
+    #strong[Software Engineer 2, Identities], Zynga -- Remote
 
   ],
   [
@@ -113,15 +113,15 @@ Software Engineer with 5+ years of Unity C\# and Unreal C++ experience, shipping
 
   ],
   main-column-second-row: [
-    - Migrated the C++ authentication SDK from reCAPTCHA Classic to Enterprise for Unreal Engine 5 iOS, packaging Swift frameworks via CMake for cross-platform engine plugin use
+    - Authored the AuthenticationFlow API guard recommendations, scoping a single concurrency flag to replace granular per-method flags and categorizing which public auth entry points need guards
 
-    - Gated Apple Game Center login behind iOS Lockdown Mode across both C\# and C++ SDKs, using dependency injection so non-iOS platforms compile cleanly without the guard
+    - Drove V2 API naming consistency across the C\# and C++ SDKs, aligning public callbacks and methods to remove cross-platform drift
 
-    - Built a real-time push notification package for Unity C\# that lets games refresh account UI immediately after email verification, without polling the backend
+    - Migrated reCAPTCHA from Classic to Enterprise in C++ for Unreal Engine 5 iOS, writing a reusable CMake helper to embed Swift frameworks into the static auth library
 
-    - Fixed a callback bug in the C++ Unreal layer that left stale account state across attach, detach, and email-update flows, aligning C++ behavior with C\# without breaking existing customers
+    - Fixed WebGL incompatibility in the C\# SDK by replacing blocking delays with a task utility, preserving the base-class contract for WebGL builds
 
-    - Forward-ported Unreal UI fixes and resolved merge conflicts across release branches to ship reCAPTCHA v3 into a production title
+    - Refactored the ImpersonateAccount API to Impersonate across the C++ SDK, unit tests, and integration tests, replacing the legacy command in the launcher
 
   ],
 )
@@ -162,6 +162,6 @@ Software Engineer with 5+ years of Unity C\# and Unreal C++ experience, shipping
 
 == Skills
 
-#strong[Engines & Languages:] Unity (C\#), Unreal Engine 5 (C++), Godot (GDScript), Objective-C++
+#strong[Languages:] C\#, C++, Java, GDScript, Objective-C, Kotlin
 
-#strong[Platforms & Build:] iOS, Android, Apple Arcade, CMake, xcframework, Xcode, UPM
+#strong[Platforms & Practices:] iOS, Android, Unity, Unreal Engine 5, WebGL, JNI, CMake, SPM, Gradle

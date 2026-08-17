@@ -81,7 +81,7 @@
   date: datetime(
     year: 2026,
     month: 8,
-    day: 15,
+    day: 17,
   ),
 )
 
@@ -99,7 +99,7 @@
 
 == Summary
 
-Software engineer with 5+ years building mobile SDKs and production game systems across iOS and Android.
+Software engineer with 5+ years shipping mobile SDKs and live game systems, from Apple Arcade and top-100 titles to authentication libraries used across Zynga's iOS and Android games.
 
 == Experience
 
@@ -113,15 +113,15 @@ Software engineer with 5+ years building mobile SDKs and production game systems
 
   ],
   main-column-second-row: [
-    - Lead system design and C\#\/C++ development for Account Recovery after Reinstall across iOS Keychain and Android Block Store, coordinating cross-platform test plans with QA after six-stakeholder approval
+    - Developed four cross-platform authentication SDKs in Kotlin, C++, and C\# for Zynga's Identities platform, consumed by 30+ iOS and Android games across 7 studios
 
-    - Delivered Google reCAPTCHA v3 for C++ auth SDKs on iOS and Android, including Unreal, adding bot protection and unblocking release validation
+    - Lead system design and C\#\/C++ development for Account Recovery after Reinstall across iOS Keychain and Android Block Store, driving the tech spec through six-stakeholder approval and coordinating cross-platform test plans with QA
 
-    - Redesigned Android 11+ SSO so titles could restore native sign-in; production logs shifted from failures-only to successful token operations
+    - Delivered Google reCAPTCHA v3 for C++ auth SDKs on iOS and Android, including Unreal; shipped in Zynga Poker as part of its ZDK 26.1 upgrade to add bot protection at sign-in
+
+    - Redesigned Android 11+ SSO token sharing, now in 14 Zynga games including Zynga Poker, Merge Magic!, and 1010!; production logs shifted from failures-only to successful token operations
 
     - Shipped same-session email-link verification in the Unity auth SDK so the game updates verified-email state without a relaunch or polling
-
-    - Refactored Android AAR publishing to JFrog Artifactory across four auth SDK libraries, splitting snapshot and release repos so games can consume in-dev builds without mixing them into release
 
   ],
 )
